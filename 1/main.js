@@ -55,6 +55,8 @@ console.log("validateEmail(null)");
 console.warn(`\t ${validateEmail(null)}`);
 console.log("validateEmail(\"WhatIsIt@com\")");
 console.warn(`\t ${validateEmail("WhatIsIt@com")}`);
+console.log("validateEmail(\"Undef.Fox@gmailcom\")");
+console.warn(`\t ${validateEmail("Undef.Fox@gmailcom")}`);
 console.log("validateEmail(\"UndefFox@gmail.com\")");
 console.info(`\t ${validateEmail("UndefFox@gmail.com")}`);
 
@@ -69,6 +71,9 @@ function validateAge(age) {
     else if (age % 1 != 0) {
         return "The number must be whole"
     }
+    else if (age < 18 || age > 120) {
+        return "The number must be within [18, 120]"
+    }
 
 
     return null;
@@ -81,6 +86,10 @@ console.log("validateAge(null)");
 console.warn(`\t ${validateAge(null)}`);
 console.log("validateAge(10.5)");
 console.warn(`\t ${validateAge(10.5)}`);
+console.log("validateAge(2)");
+console.warn(`\t ${validateAge(2)}`);
+console.log("validateAge(40000)");
+console.warn(`\t ${validateAge(40000)}`);
 console.log("validateAge(21)");
 console.info(`\t ${validateAge(21)}`);
 
